@@ -1,0 +1,16 @@
+<% if obj.errors.any? %>
+	<div class='row'>
+		<div class='alert alert-error span8'>
+			<% if obj == @post %>
+				<h5>Your post did not meet the following guidelines: </h5>
+			<% else %>
+				<h5>Your category did not meet the following guidelines: </h5>
+			<% end %>
+			<ul>
+				<% obj.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+<% end %>
