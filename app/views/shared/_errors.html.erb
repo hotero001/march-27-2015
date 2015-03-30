@@ -3,8 +3,10 @@
 		<div class='alert alert-error span8'>
 			<% if obj == @post %>
 				<h5>Your post did not meet the following guidelines: </h5>
-			<% else %>
+			<% elsif obj == @category %>
 				<h5>Your category did not meet the following guidelines: </h5>
+			<% else obj == @comment %>
+				<h5>Your comment did not meet the following guidelines: </h5>
 			<% end %>
 			<ul>
 				<% obj.errors.full_messages.each do |msg| %>
